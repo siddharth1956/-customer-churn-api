@@ -1,0 +1,6 @@
+__pycache__/
+logs/
+scored_customers.csv
+*.pyc
+.DS_Store
+.env
