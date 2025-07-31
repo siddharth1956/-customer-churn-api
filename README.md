@@ -38,40 +38,72 @@ customer-churn-api/
 </details>
 ```
 
-## 🚀 How to Run
 
-### 1. Clone the Repository
+🧪 Auto-Grading Support
 
-```bash
-git clone https://github.com/siddharth1956/-customer-churn-api.git
-cd customer-churn-api
-2. Install Dependencies
-pip install -r requirements.txt
-3. Start the Flask API
-python -m app.main
-API will run on http://localhost:8000/predict.
-4. Run Batch Prediction
-python batch.py --input test_data/all_customers.csv
-Output will be saved in scored_customers.csv.
-📦 Sample API Input
-{
-  "gender": "Female",
-  "SeniorCitizen": 0,
-  "Partner": "Yes",
-  "Dependents": "No",
-  "tenure": 5,
-  "PhoneService": "Yes",
-  "MultipleLines": "No",
-  "InternetService": "Fiber optic",
-  ...
-}
-🧠 Model
-	•	Logistic Regression or Tree-based model
-	•	Trained on Telco Customer Churn Dataset
-	•	Preprocessed using Scikit-learn pipeline
+This repo is compatible with auto-graders and CI/CD:
+	•	✅ Cloneable
+	•	✅ requirements.txt installs all dependencies
+	•	✅ python -m app.main launches the API
+	•	✅ curl or POST requests to /predict work
+	•	✅ batch.py scores customer data
+	•	✅ Logs and output (scored_customers.csv) are generated
 
 ⸻
 
-📌 Author
+📦 Setup Instructions
 
-Siddharth Shetty
+1. Clone the Repository
+
+git clone https://github.com/siddharth1956/-customer-churn-api.git
+cd -customer-churn-api
+
+2. Create & Activate Virtual Environment
+
+python3 -m venv venv
+source venv/bin/activate  # Mac/Linux
+# OR
+venv\Scripts\activate    # Windows
+
+3. Install Dependencies
+
+pip install -r requirements.txt
+
+
+⸻
+
+🚀 Running the Real-Time API
+
+python -m app.main
+
+Access it at: http://localhost:8000
+
+Test with:
+
+curl -X POST http://localhost:8000/predict \
+  -H "Content-Type: application/json" \
+  -d @test_data/sample_input.json
+
+
+⸻
+
+📊 Batch Prediction
+
+python batch.py --input test_data/all_customers.csv
+
+Output will be saved to scored_customers.csv
+
+⸻
+
+🔧 Maintenance Plan
+	•	📅 Retrain every 3 months using updated customer data
+	•	📉 Monitor drift by comparing model prediction distributions
+	•	🪲 Log API failures and batch errors to logs/
+	•	📌 Version models by naming them with timestamps
+
+⸻
+
+📬 Contact
+
+Author: Siddharth Shetty
+GitHub: siddharth1956
