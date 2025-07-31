@@ -7,29 +7,29 @@ This project predicts whether a customer will churn (leave) using a machine lear
 - Trained model and preprocessing pipeline
 
 ---
-
 ## 📁 Project Structure
+
 <details>
-<summary>customer-churn-api/
+<summary>Click to expand</summary>
+customer-churn-api/
 ├── app/
 │   ├── init.py
-│   ├── main.py
-│   ├── model.pkl
-│   ├── transformer.pkl
-│   └── utils.py
-├── batch.py
-├── train_model.py
-├── all_customers.csv
-├── gold_churn_data.csv
-├── scored_customers.csv
-├── sample_input.json
+│   ├── main.py              # Flask API
+│   ├── model.pkl            # Trained model
+│   ├── transformer.pkl      # Preprocessing pipeline
+│   └── utils.py             # Helper functions
+├── batch.py                 # Batch scoring script
+├── train_model.py           # Model training script
+├── all_customers.csv        # Input customer data
+├── gold_churn_data.csv      # Ground truth labels
+├── scored_customers.csv     # Output from batch scoring
+├── sample_input.json        # Sample for real-time API
 ├── test_data/
 │   ├── all_customers.csv
 │   └── sample_input.json
-├── logs/
-├── requirements.txt
+├── logs/                    # Log files
+├── requirements.txt         # Project dependencies
 └── README.md
-</summary>
 </details>
 
 
