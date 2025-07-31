@@ -7,13 +7,18 @@ This project predicts whether a customer will churn (leave) using a machine lear
 - Trained model and preprocessing pipeline
 
 ---
+
 ## 📁 Project Structure
 
 <details>
 <summary>Click to expand</summary>
+
+<br>
+
+```plaintext
 customer-churn-api/
 ├── app/
-│   ├── init.py
+│   ├── __init__.py
 │   ├── main.py              # Flask API
 │   ├── model.pkl            # Trained model
 │   ├── transformer.pkl      # Preprocessing pipeline
@@ -31,7 +36,7 @@ customer-churn-api/
 ├── requirements.txt         # Project dependencies
 └── README.md
 </details>
-
+```
 
 ## 🚀 How to Run
 
