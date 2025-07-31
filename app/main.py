@@ -13,15 +13,14 @@ def predict():
     try:
         data = request.get_json()
 
-        # If the JSON has a 'customer' key, use it. Otherwise use the full data.
-        customer_data = data.get("customer", data)
-        df = pd.DataFrame([customer_data])
+        # Convert incoming JSON to DataFrame
+        df = pd.DataFrame([data["customer"]])
 
-        # Drop 'Unnamed: 0' if it exists
-        if 'Unnamed: 0' in df.columns:
-            df = df.drop(columns=['Unnamed: 0'])
+        # Fix: Add dummy 'Unnamed: 0' column if required
+        if 'Unnamed: 0' not in df.columns:
+            df['Unnamed: 0'] = 0  # Add a default dummy index value
 
-        # Transform and predict
+        # Transform the input and make prediction
         X = transformer.transform(df)
         prob = model.predict_proba(X)[0][1]
         prediction = "Yes" if prob > 0.5 else "No"
